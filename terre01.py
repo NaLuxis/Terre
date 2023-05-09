@@ -2,7 +2,6 @@
 
 import pathlib
 
-fileName = __file__ 
-p = pathlib.Path(fileName)
+p = pathlib.Path(__file__ )
 
 print(p.name)
