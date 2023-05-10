@@ -13,7 +13,16 @@ for letter in alphabetLower:
     if letterArgument == letter:
         break
     indexArgument += 1
+
+result = alphabetLower[indexArgument:]
+
+for letter in result:
+    print(letter, end="")
+else:
+    print("")
+
+    
+
         
 
 
-print(indexArgument)
