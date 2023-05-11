@@ -11,7 +11,7 @@ def main() -> None:
 
 
 def strig_argument() -> str:
-    """Regarde si l'argument et valide"""
+    """Regarde si l'argument est valide"""
     if len(sys.argv) !=2:
         print("Erreur, veuillez entrée une seule chaîne de caractère")
         exit()
