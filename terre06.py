@@ -6,7 +6,7 @@ import sys
 def main() -> None:
     """Point d'entrée du programme """
     arg: str = strig_validate()
-    string_returned: str = string_return(f"{arg}")
+    string_returned: str = string_return(arg)
     print(string_returned)
 
 
