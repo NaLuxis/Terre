@@ -5,12 +5,12 @@ import sys
 
 def main() -> None:
     """Point d'entrée du programme """
-    arg: str = strig_argument()
+    arg: str = strig_validate()
     string_returned: str = string_return(f"{arg}")
     print(string_returned)
 
 
-def strig_argument() -> str:
+def strig_validate() -> str:
     """Regarde si l'argument est valide"""
     if len(sys.argv) !=2:
         print("Erreur, veuillez entrée une seule chaîne de caractère")
