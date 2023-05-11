@@ -4,17 +4,17 @@ import sys
 
 alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
 
-letterArgument = sys.argv[1]
+letter_argument = sys.argv[1]
 
-alphabetLower = [letter.lower() for letter in alphabet]
+alphabet_lower = [letter.lower() for letter in alphabet]
 
-indexArgument = 0
-for letter in alphabetLower:
-    if letterArgument == letter:
+index_argument = 0
+for letter in alphabet_lower:
+    if letter_argument == letter:
         break
-    indexArgument += 1
+    index_argument += 1
 
-result = alphabetLower[indexArgument:]
+result = alphabet_lower[index_argument:]
 
 for letter in result:
     print(letter, end="")

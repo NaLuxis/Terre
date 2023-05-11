@@ -2,7 +2,7 @@
 
 import sys
 
-listArguments = sys.argv[1:]
+list_arguments = sys.argv[1:]
     
-for argument in listArguments:
+for argument in list_arguments:
     print(argument)
