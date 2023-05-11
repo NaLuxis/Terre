@@ -1,12 +1,12 @@
 ############### Nombre premier ###############
+#Moins de 8 secondes pour 100 001 029 c'est pas ouf mais ça reste ok
 
 import sys
 
 def main() -> None:
     """Point d'entrée du programme """
     valide_arg: int = validate_arg()
-    # sqrt_result: int = sqrt(valide_arg)
-    result: int = prime_number(validate_arg())
+    result: int = prime_number(valide_arg)
     print(result)
 
 
@@ -28,11 +28,6 @@ def validate_arg() -> int:
         print(f"Erreur. {sys.argv[1]} n'est pas considéré comme un nombre premier")
         exit()
     return int(sys.argv[1])
-
-
-def sqrt(arg: int) -> int:
-    """Cacul de la racine carrée d'un nombre"""
-    return arg ** 0.5
 
 
 def prime_number(arg: int) -> str:
