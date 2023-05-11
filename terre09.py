@@ -1,9 +1,5 @@
 ############### Racine carrée d’un nombre ###############
 
-# Le nombre doit être entier et positif
-# Je calcul sa racine carré
-# J'afiche le résultat
-
 import sys
 
 def main() -> None:
