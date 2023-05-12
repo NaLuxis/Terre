@@ -12,14 +12,18 @@ def main() -> None:
 
 def validate_time() -> Dict[str,str]:
     """Valide ou non si l'argument est une heure au format attedus"""
-    
+
     if len(sys.argv) != 2:
         print(f"Erreur. 1 argument attendut, vous en avez donné : {len(sys.argv) - 1}")
         exit()
 
-    time = sys.argv[1].split(":")
-    hour = time[0]
-    minute = time[1]
+    if sys.argv[1].count(":"):
+        time = sys.argv[1].split(":")
+        hour = time[0]
+        minute = time[1]
+    else:
+        print("Erreur dans la saisie. Une heure avec ce format est attendue : XX:XX")
+        exit()
 
     if not hour.isdigit() or not minute.isdigit():
         print("Erreur dans la saisie. Une heure avec ce format est attendue : XX:XX")
@@ -31,14 +35,13 @@ def validate_time() -> Dict[str,str]:
         print("Erreur, les heures ne peuvent pas dépasser 23")
         exit()
     elif int(minute) > 59:
-        print("Erreur, une minutes ne peuvent pas dépasser 59")
+        print("Erreur, les minutes ne peuvent pas dépasser 59")
         exit()
     elif len(hour) == 2 and len(minute) == 2:
         return {
             "hour": hour,
             "minute": minute,
         }
-
 
 def convert_time(hour: str, minute: str) -> str:
     """Convertie une heure en format 24h vers 12h"""
