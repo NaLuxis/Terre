@@ -1,10 +1,5 @@
 ############### Trié ou pas ###############
 
-#je copy la list que je recois
-#je la trie a lenvers et a lendrois
-#je regarde si c'est == a la list de départ
-#j'affiche dans quel ordre c'est trier ou non
-
 import sys
 from typing import List
 
