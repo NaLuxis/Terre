@@ -8,6 +8,7 @@ def main() -> None:
     valide_time: Dict[str, str] = validate_time()
     converted_time: str = convert_time(valide_time["hour"], valide_time["minute"], valide_time["AM_PM"])
     print(converted_time)
+    print(valide_time)
 
 
 def validate_time() -> Dict[str,str]:
@@ -23,14 +24,14 @@ def validate_time() -> Dict[str,str]:
         minute = time[1][0:2]
         ante_post = time[1][2:].upper()
     else:
-        print("Erreur dans la saisie. Une heure avec ce format est attendue : XX:XXAM ou XX:XXPM")
+        print("Erreur dans la saisie. Une heure avec ce format est attendue : X:XX ou XX:XX | AM ou PM min & maj")
         exit()
 
     if not hour.isdigit() or not minute.isdigit():
-        print("Erreur dans la saisie. Une heure avec ce format est attendue : XX:XXAM ou XX:XXPM")
+        print("Erreur dans la saisie. Une heure avec ce format est attendue : X:XX ou XX:XX | AM ou PM min & maj")
         exit()
-    elif len(hour) != 2 or len(minute) != 2 or len(ante_post) != 2:
-        print("Erreur dans la saisie. Saisis attendue : XX:XXAM ou XX:XXPM")
+    elif len(hour) > 2 or len(minute) != 2 or len(ante_post) != 2:
+        print("Erreur dans la saisie. Saisis attendue : X:XX ou XX:XX | AM ou PM min & maj")
         exit()
     elif int(hour) > 12:
         print("Erreur, les heures ne peuvent pas dépasser 12")
@@ -41,7 +42,7 @@ def validate_time() -> Dict[str,str]:
     elif int(minute) > 59:
         print("Erreur, les minutes ne peuvent pas dépasser 59")
         exit()
-    elif len(hour) == 2 and len(minute) == 2:
+    else:
         return {
             "hour": hour,
             "minute": minute,
@@ -55,14 +56,20 @@ def convert_time(hour: str, minute: str, meridiem: str) -> str:
             print(f"00:{minute}")
             exit()
         elif int(hour) < 10:
-            print(f"")
+            print(f"0{hour}:{minute}")
+            exit()
+        elif int(hour) < 12:
+            print(f"{hour}:{minute}")
             exit()
     elif meridiem == "PM":
-        print("s")
-    else:
-        print("c")
+        if int(hour) == 12:
+            print(f"{hour}:{minute}")
+            exit()
+        elif int(hour) < 12:
+            print(f"{int(hour) + 12}:{minute}")
+            exit()
+        
+    
 
 if __name__ == "__main__":
     main()
-
-#attention faut refaire les condition, je peut avoir un seul chiffre pour les heures
