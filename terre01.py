@@ -2,6 +2,19 @@
 
 import pathlib
 
-p = pathlib.Path(__file__ )
+def main() -> None:
+    """Point d'entée du programme"""
+    name_print: str = file_name_print()
+    print(name_print)
 
-print(p.name)
+
+def file_name_print() -> str:
+    """Affiche le nom du ficher"""
+    
+    path = pathlib.Path(__file__ )
+
+    print(path.name)
+    exit()
+
+if __name__ == "__main__":
+    main()
