@@ -1,30 +1,36 @@
 ############### Pair ou impair ###############
 
-#après 8 heures de code j'ai réussi OUIIIIII, je suis trop content ^^
-
 import sys
 
-search_number = sys.argv
+def main() -> None:
+    """Point d'entrée du programme"""
+    valide_arg:int = validate_argument()
+    even_odd_print: int = even_odd(valide_arg)
+    print(even_odd_print)
 
-def error():
-    print("Tu ne me la mettras pas à l'envers")
 
-if len(search_number) < 2:
-    error()
-elif len(search_number) > 2:
-    error()
-else:
-    count = 0
-    for chart in range(0,10):
-        is_int = search_number[1].count(f"{count}")
-        count = count + 1
-        if is_int > 0:
-            if search_number[1].count("."):
-                raise ValueError("Tu ne me la mettras pas à l'envers")
-            if int(search_number[1]) % 2 == 0:
-                print("pair")
-            else:
-                print("impair")
-            break      
+def validate_argument() -> int:
+    """Valide si un integer et donnée en argument"""
+
+    if len(sys.argv) != 2:
+        print(f"Erreur. 1 argument attendut, vous en avez donné : {len(sys.argv) - 1}")
+        exit()
+    elif not sys.argv[1].lstrip("-+").isdigit():
+        print("Erreur. Un nombre entier est attendu")
+        exit()
     else:
-        error()
+        return int(sys.argv[1])
+
+    
+def even_odd(int_arg: int) -> None:
+    """Affiche si un integer donné est pair ou impair"""
+
+    if int_arg % 2 == 0:
+        print("Pair")
+        exit()
+    else:
+        print("Impair")
+        exit()
+
+if __name__ == "__main__":
+    main()
