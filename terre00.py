@@ -6,7 +6,7 @@ def main() -> None:
     print(printed_alphabet)
 
 
-def print_alphabet() -> str:
+def print_alphabet() -> None:
     """Affiche l'alphabet entier en minuscules"""
     
     alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
