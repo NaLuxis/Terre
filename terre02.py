@@ -2,7 +2,22 @@
 
 import sys
 
-list_arguments = sys.argv[1:]
+def main() -> None:
+    """Point d'entrée du programme"""
+    printed_arguments: str = print_arguments()
+    print(printed_arguments)
+
+
+def print_arguments() -> str:
+    """Affiche les arguments passées en ligne de commande"""
     
-for argument in list_arguments:
-    print(argument)
+    list_arguments = sys.argv[1:]
+    
+    for argument in list_arguments:
+        print(argument)
+    else:
+        exit()
+
+
+if __name__ == "__main__":
+    main()
