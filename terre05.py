@@ -6,7 +6,7 @@ from typing import Dict
 def main() -> None:
     """Point d'entée du programme"""
     valide_arg: Dict[str, int] = validate_argument()
-    print_division: str = division(valide_arg["dividend"], valide_arg["divisor"])
+    print_division: None = division(valide_arg["dividend"], valide_arg["divisor"])
     print(print_division)
 
 
@@ -27,7 +27,7 @@ def validate_argument() -> Dict[str, int]:
 
 
 
-def division(dividend, divisor) -> str:
+def division(dividend, divisor) -> None:
     """Fait une division et affiche le résultat plus le reste"""
 
     if divisor == 0:

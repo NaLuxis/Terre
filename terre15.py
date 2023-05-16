@@ -4,11 +4,11 @@ import random
 
 def main() -> None:
     """Point d'entée du programme"""
-    random: str = random_adjectives()
+    random: None = random_adjectives()
     print(random)
 
 
-def random_adjectives() -> str:
+def random_adjectives() -> None:
     """Affiche : J'ai terminé l'Épreuve de la Terre et c'était [un adjectif random] """
 
     list_adjctives = ["sans difficulté", "simple", "aisé", "facile", "commode", "élémentaire", "enfantin",

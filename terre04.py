@@ -5,7 +5,7 @@ import sys
 def main() -> None:
     """Point d'entrée du programme"""
     valide_arg:int = validate_argument()
-    even_odd_print: int = even_odd(valide_arg)
+    even_odd_print: None = even_odd(valide_arg)
     print(even_odd_print)
 
 
@@ -22,7 +22,7 @@ def validate_argument() -> int:
         return int(sys.argv[1])
 
     
-def even_odd(int_arg: int) -> str:
+def even_odd(int_arg: int) -> None:
     """Affiche si un integer donné est pair ou impair"""
 
     if int_arg % 2 == 0:

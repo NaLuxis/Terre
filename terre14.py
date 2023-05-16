@@ -6,7 +6,7 @@ from typing import List
 def main() -> None:
     """Point d'entée du programme"""
     valide_args: List[int] = validate_arguments()
-    sorted_list: str = sort_or_not(valide_args)
+    sorted_list: None = sort_or_not(valide_args)
     print(sorted_list)
 
 
@@ -29,7 +29,7 @@ def validate_arguments() -> List[int]:
     return numbers_list
 
 
-def sort_or_not(numbers_list: List[int]) -> str:
+def sort_or_not(numbers_list: List[int]) -> None:
     """Affiche si une liste d'entier est trier ou non et dans quel ordre"""
     
     copy_numbers_list = numbers_list.copy()

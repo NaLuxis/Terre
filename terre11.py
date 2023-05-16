@@ -6,12 +6,12 @@ from typing import Dict
 def main() -> None:
     """Point d'entrée du programme"""
     valide_time: Dict[str, str] = validate_time()
-    converted_time: str = convert_time(valide_time["hour"], valide_time["minute"])
+    converted_time: None = convert_time(valide_time["hour"], valide_time["minute"])
     print(converted_time)
 
 
 def validate_time() -> Dict[str,str]:
-    """Valide ou non si l'argument est une heure au format attedus"""
+    """Valide ou non si l'argument est une heure au format attendue"""
 
     if len(sys.argv) != 2:
         print(f"Erreur. 1 argument attendut, vous en avez donné : {len(sys.argv) - 1}")
@@ -43,8 +43,9 @@ def validate_time() -> Dict[str,str]:
             "minute": minute,
         }
 
-def convert_time(hour: str, minute: str) -> str:
+def convert_time(hour: str, minute: str) -> None:
     """Convertie une heure en format 24h vers 12h"""
+
     if int(hour) == 00 and int(minute) == 00:
         print("12:00 a.m")
         exit()

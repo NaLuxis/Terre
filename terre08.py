@@ -13,21 +13,13 @@ def main() -> None:
 
 def validate_argument() -> Dict[str, int]:
     """Vérifie qu'il y a 2 nombre, et exposant positif"""
+
     if len(sys.argv) != 3:
-        print(f"Erreur, le nombres d'arguments entré(s) ({len(sys.argv) - 1}) est incorect. Nombre attendu : 2")
+        print(f"Erreur. 2 argument attendut, vous en avez donné : {len(sys.argv) - 1}")
         exit()
-    elif (sys.argv[1].isdigit() and sys.argv[2].isdigit()) != True:
-        if sys.argv[2] < "0" and sys.argv[2].count("+") != True:
-            print("Les exposants négatifs ne sont pas admis")
-            exit()
-        else:
-            if sys.argv[2].count("+"):
-                pass
-            elif sys.argv[1].count("-"):
-                pass
-            else:
-                print("2 nombre sont attendus")
-                exit()
+    elif not sys.argv[1].lstrip("+-").isdigit() or not sys.argv[2].lstrip("+").isdigit():
+        print("Erreur. Deux nombres entier sont attendus, l'exposant ne peut pas être négatif")
+        exit()
     return {
         "base": int(sys.argv[1]),
         "exposant": int(sys.argv[2]),
@@ -36,7 +28,9 @@ def validate_argument() -> Dict[str, int]:
 
 def number_power(base: int, exposant: int):
     """Calcul la paissance d'une base sur un exposant"""
-    return base ** exposant
+
+    print(base ** exposant)
+    exit()
 
 
 if __name__ == "__main__":

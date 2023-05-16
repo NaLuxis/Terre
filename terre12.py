@@ -6,9 +6,8 @@ from typing import Dict
 def main() -> None:
     """Point d'entrée du programme"""
     valide_time: Dict[str, str] = validate_time()
-    converted_time: str = convert_time(valide_time["hour"], valide_time["minute"], valide_time["AM_PM"])
+    converted_time: None = convert_time(valide_time["hour"], valide_time["minute"], valide_time["AM_PM"])
     print(converted_time)
-    print(valide_time)
 
 
 def validate_time() -> Dict[str,str]:
@@ -49,8 +48,9 @@ def validate_time() -> Dict[str,str]:
             "AM_PM": ante_post,
         }
 
-def convert_time(hour: str, minute: str, meridiem: str) -> str:
+def convert_time(hour: str, minute: str, meridiem: str) -> None:
     """Convertie une heure en format 12h vers 24h"""
+
     if meridiem == "AM":
         if int(hour) == 12:
             print(f"00:{minute}")
