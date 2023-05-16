@@ -8,7 +8,7 @@ def main() -> None:
     print(printed_arguments)
 
 
-def print_arguments() -> None:
+def print_arguments() -> str:
     """Affiche les arguments passées en ligne de commande"""
     
     list_arguments = sys.argv[1:]

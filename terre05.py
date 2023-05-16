@@ -27,7 +27,7 @@ def validate_argument() -> Dict[str, int]:
 
 
 
-def division(dividend, divisor) -> None:
+def division(dividend, divisor) -> str:
     """Fait une division et affiche le résultat plus le reste"""
 
     if divisor == 0:

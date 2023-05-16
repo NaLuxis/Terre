@@ -22,7 +22,7 @@ def validate_argument() -> int:
         return int(sys.argv[1])
 
     
-def even_odd(int_arg: int) -> None:
+def even_odd(int_arg: int) -> str:
     """Affiche si un integer donné est pair ou impair"""
 
     if int_arg % 2 == 0:

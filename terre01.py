@@ -8,7 +8,7 @@ def main() -> None:
     print(name_print)
 
 
-def file_name_print() -> None:
+def file_name_print() -> str:
     """Affiche le nom du ficher"""
     
     path = pathlib.Path(__file__ )

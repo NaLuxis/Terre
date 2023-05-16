@@ -1,5 +1,4 @@
 ############### Inverser une chaîne ###############
-#prend pas en charge le type de donnée que j'entre car je no trouve pas de moyen de le récupérer
 
 import sys
 
@@ -11,18 +10,20 @@ def main() -> None:
 
 
 def strig_validate() -> str:
-    """Regarde si l'argument est valide"""
+    """Valide si l'argument est une chaîne de caractère"""
+
     if len(sys.argv) !=2:
-        print("Erreur, veuillez entrée une seule chaîne de caractère")
+        print(f"Erreur. 2 argument attendut, vous en avez donné : {len(sys.argv) - 1}")
         exit()
-    if sys.argv[1].isnumeric():
-        print("Erreur, veuillez entrée une seule chaîne de caractère")
+    if sys.argv[1].isdigit():
+        print("Erreur. Veuillez entrée une chaîne de caractère")
         exit()
     return sys.argv[1]
 
 
 def string_return(sting_arg: str) ->str:
     """Retourne la chaîne de caractère donnée"""
+    
     return sting_arg[::-1]
 
 

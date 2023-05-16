@@ -9,7 +9,7 @@ def main() -> None:
     print(start_letter)
 
 
-def validate_letter() -> None:
+def validate_letter() -> str:
     """Valide s'il n'y a qu'une seule lettre donnée en arguments"""
 
     if len(sys.argv) != 2:
@@ -25,7 +25,7 @@ def validate_letter() -> None:
         return sys.argv[1]
 
 
-def start_letter_print(letter_arg: str) -> None:
+def start_letter_print(letter_arg: str) -> str:
     """Affiche l'aphabet à partir d'une lettre donnée"""
 
     alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
