@@ -18,11 +18,11 @@ def validate_letter() -> str:
     elif len(sys.argv[1]) != 1:
         print("Erreur. Une lettre est attendue")
         exit()
-    elif not sys.argv[1].isascii():
+    elif not sys.argv[1].isascii() or not sys.argv[1].isalpha():
         print("Erreur. Seules des lettres de l'alphabet minuscules sont acceptées, les accents sont refusés")
         exit()
     elif not sys.argv[1].islower():
-        print("Erreur. Une lettre MINUSCULE est attendues")
+        print("Erreur. Une lettre MINUSCULE est attendue")
         exit()
     else:
         return sys.argv[1]
@@ -45,9 +45,8 @@ def start_letter_print(letter_arg: str) -> None:
 
     for letter in result:
         print(letter, end="")
-    else:
-        print("")
-        exit()
+    print("")
+    exit()
 
 
 if __name__ == "__main__":

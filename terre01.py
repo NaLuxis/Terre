@@ -4,11 +4,11 @@ import pathlib
 
 def main() -> None:
     """Point d'entée du programme"""
-    name_print: None = file_name_print()
+    name_print = file_name_print()
     print(name_print)
 
 
-def file_name_print() -> None:
+def file_name_print():
     """Affiche le nom du ficher"""
     
     path = pathlib.Path(__file__ )

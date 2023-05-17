@@ -16,7 +16,7 @@ def random_adjectives() -> None:
                        "à l'aise", "instructeur", "éducateur", "formateur", "pédagogue", "cool",
                        "beaucoup de boulot", "de la recherche", "du travail", "bien"]
 
-    random_item = random.randint(1, len(list_adjctives))
+    random_item = random.randint(1, len(list_adjctives) -1)
     print(f"J'ai terminé l'Épreuve de la Terre et c'était {list_adjctives[random_item]}")
     exit()
 

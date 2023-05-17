@@ -10,13 +10,15 @@ def main() -> None:
 
 def print_arguments() -> None:
     """Affiche les arguments passées en ligne de commande"""
+
+    if len(sys.argv) < 2:
+        print("Erreur. Pour afficher un argument, il faut au moins en donner un")
     
     list_arguments = sys.argv[1:]
     
     for argument in list_arguments:
         print(argument)
-    else:
-        exit()
+    exit()
 
 
 if __name__ == "__main__":

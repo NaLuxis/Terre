@@ -15,7 +15,7 @@ def strig_validate() -> str:
     if len(sys.argv) !=2:
         print(f"Erreur. 1 argument attendut, vous en avez donné : {len(sys.argv) - 1}")
         exit()
-    if sys.argv[1].isdigit():
+    if sys.argv[1].lstrip(".").isdigit():
         print("Erreur. Veuillez entrée une chaîne de caractère")
         exit()
     return sys.argv[1]

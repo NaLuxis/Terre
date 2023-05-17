@@ -16,7 +16,7 @@ def validate_argument() -> Dict[str, int]:
     if len(sys.argv) != 3:
         print(f"Erreur. 2 argument attendut, vous en avez donné : {len(sys.argv) - 1}")
         exit()
-    elif not sys.argv[1].lstrip("-+").isdigit() and not sys.argv[2].lstrip("-+").isdigit():
+    elif not sys.argv[1].lstrip("-+").isdigit() or not sys.argv[2].lstrip("-+").isdigit():
         print("Erreur. 2 nombres entiers sont attendus")
         exit()
     else:

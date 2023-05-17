@@ -1,5 +1,4 @@
 ############### Nombre premier ###############
-#Moins de 8 secondes pour 100 001 029 c'est pas ouf mais ça reste ok
 
 import sys
 
@@ -33,7 +32,7 @@ def prime_number(arg: int) -> None:
             print(f"Non, {arg} n'est pas un nombre premier")
             exit()
         elif num == arg:
-            print(f"Oui, {arg} est un nombre premier.")
+            print(f"Oui, {arg} est un nombre premier")
             exit()
 
 

@@ -13,11 +13,10 @@ def print_alphabet() -> None:
 
     for letter in alphabet:
         print(letter.lower(), end="")
-    else:
-        print("")
-        exit()
+    
+    print("")
+    exit()
 
 
 if __name__ == "__main__":
     main()
-    exit()

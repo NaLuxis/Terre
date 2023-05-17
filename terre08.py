@@ -7,7 +7,7 @@ from typing import Dict
 def main() -> None:
     """Point d'entrée du programme """
     valide_arg: Dict[str, int] = validate_argument()
-    power_result: int = number_power(valide_arg["base"], valide_arg["exposant"])
+    power_result: None = number_power(valide_arg["base"], valide_arg["exposant"])
     print(power_result)
 
 
@@ -26,7 +26,7 @@ def validate_argument() -> Dict[str, int]:
     }
 
 
-def number_power(base: int, exposant: int):
+def number_power(base: int, exposant: int) -> None:
     """Calcul la paissance d'une base sur un exposant"""
 
     print(base ** exposant)

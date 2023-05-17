@@ -14,7 +14,7 @@ def validate_arguments() -> List[int]:
     """Valide si les arguments donnés correspondes à une list d'entiers"""
 
     if len(sys.argv) < 3:
-        print(f"Vous avez donné {len(sys.argv) -1} entier(s). Il en faut au minimun 2")
+        print(f"Erreur. 2 arguments attenduts au minimum, vous en avez donné : {len(sys.argv) - 1}")
         exit()
 
     numbers_list = []
